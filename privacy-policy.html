@@ -1,0 +1,537 @@
+<title>Noventis Cortex Privacy Policy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
+
+<style>
+  /* ── Tokens ────────────────────────────────────────────────────────────────
+     Light is the base. Dark redefines only these values, twice: once for a dark
+     OS with no explicit choice, once for an explicit dark toggle. No component
+     rule below ever sits inside a media or [data-theme] block. */
+  :root {
+    --ground:      #f6faf8;
+    --paper:       #ffffff;
+    --sunk:        #eef4f1;
+    --ink:         #131a18;
+    --ink-soft:    #3f4a47;
+    --muted:       #67736f;
+    --faint:       #8d9995;
+    --rule:        #dde6e2;
+    --rule-soft:   #e8efec;
+    --accent:      #00614f;
+    --accent-soft: #d9f2ea;
+    --accent-ink:  #00382e;
+    --shadow:      0 1px 2px rgba(11, 32, 27, .05), 0 8px 28px -18px rgba(11, 32, 27, .35);
+    --measure:     34rem;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground:      #0b100f;
+      --paper:       #121918;
+      --sunk:        #161f1d;
+      --ink:         #dfe6e2;
+      --ink-soft:    #bcc6c2;
+      --muted:       #8e9a96;
+      --faint:       #6d7975;
+      --rule:        #26302e;
+      --rule-soft:   #1c2523;
+      --accent:      #5adbc0;
+      --accent-soft: #0d2b26;
+      --accent-ink:  #a9f0e0;
+      --shadow:      0 1px 2px rgba(0, 0, 0, .4), 0 8px 28px -18px rgba(0, 0, 0, .9);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground:      #0b100f;
+    --paper:       #121918;
+    --sunk:        #161f1d;
+    --ink:         #dfe6e2;
+    --ink-soft:    #bcc6c2;
+    --muted:       #8e9a96;
+    --faint:       #6d7975;
+    --rule:        #26302e;
+    --rule-soft:   #1c2523;
+    --accent:      #5adbc0;
+    --accent-soft: #0d2b26;
+    --accent-ink:  #a9f0e0;
+    --shadow:      0 1px 2px rgba(0, 0, 0, .4), 0 8px 28px -18px rgba(0, 0, 0, .9);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: "Public Sans", ui-sans-serif, system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection { background: var(--accent-soft); color: var(--accent-ink); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+  /* ── Masthead ──────────────────────────────────────────────────────────── */
+  .masthead {
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+  }
+  .masthead-inner {
+    max-width: 62rem;
+    margin: 0 auto;
+    padding: 28px 32px 26px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 20px 40px;
+  }
+  .brand { display: flex; align-items: center; gap: 13px; }
+  .brand svg { display: block; flex: none; }
+  .brand-name {
+    font-family: "Newsreader", Georgia, "Times New Roman", serif;
+    font-size: 21px;
+    font-weight: 600;
+    letter-spacing: -.01em;
+    line-height: 1.15;
+  }
+  .brand-name span { display: block; color: var(--accent); }
+  .stamp {
+    margin-left: auto;
+    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 11.5px;
+    letter-spacing: .04em;
+    color: var(--muted);
+    text-align: right;
+    line-height: 1.8;
+  }
+  .stamp b { color: var(--ink-soft); font-weight: 500; }
+
+  /* ── Page frame ────────────────────────────────────────────────────────── */
+  main { max-width: 62rem; margin: 0 auto; padding: 0 32px 108px; }
+
+  .title-block { padding: 68px 0 44px; border-bottom: 1px solid var(--rule); }
+  .eyebrow {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 18px;
+  }
+  h1 {
+    font-family: "Newsreader", Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(2.4rem, 6vw, 3.5rem);
+    line-height: 1.06;
+    letter-spacing: -.022em;
+    margin: 0;
+    max-width: 18ch;
+    text-wrap: balance;
+  }
+  .standfirst {
+    margin: 24px 0 0;
+    max-width: var(--measure);
+    font-size: 1.14rem;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+
+  /* ── Sections. The numbers encode the policy's own clause numbering, which
+        is referenced from the app's Terms screen — they are addresses, not
+        decoration. ──────────────────────────────────────────────────────── */
+  section { padding: 52px 0 0; }
+  section + section { border-top: 1px solid var(--rule-soft); }
+
+  .sec-head { display: flex; gap: 20px; align-items: baseline; margin: 0 0 22px; }
+  .sec-num {
+    flex: none;
+    width: 2.1rem;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+    color: var(--faint);
+    padding-top: .45rem;
+  }
+  h2 {
+    font-family: "Newsreader", Georgia, serif;
+    font-weight: 600;
+    font-size: 1.62rem;
+    line-height: 1.22;
+    letter-spacing: -.015em;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .body { margin-left: calc(2.1rem + 20px); max-width: var(--measure); }
+  @media (max-width: 620px) {
+    .sec-head { gap: 14px; }
+    .sec-num { width: 1.7rem; }
+    .body { margin-left: 0; }
+  }
+
+  .body > * + * { margin-top: 1.15em; }
+  .body p { margin: 0; }
+  .body strong { font-weight: 600; }
+  .body em { font-style: italic; color: var(--ink-soft); }
+
+  ul.plain { margin: 0; padding: 0; list-style: none; display: grid; gap: 11px; }
+  ul.plain li { position: relative; padding-left: 22px; }
+  ul.plain li::before {
+    content: "";
+    position: absolute;
+    left: 2px; top: .72em;
+    width: 9px; height: 1.5px;
+    background: var(--accent);
+  }
+
+  .lede {
+    font-family: "Newsreader", Georgia, serif;
+    font-size: 1.5rem;
+    line-height: 1.34;
+    font-weight: 400;
+    letter-spacing: -.01em;
+    color: var(--ink);
+  }
+
+  /* ── The verification callout. One flourish, spent on the document's single
+        most distinctive claim: that it can be tested rather than trusted. ── */
+  .verify {
+    margin: 30px 0 0 calc(2.1rem + 20px);
+    max-width: var(--measure);
+    background: var(--accent-soft);
+    color: var(--accent-ink);
+    border-radius: 3px;
+    padding: 22px 26px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  @media (max-width: 620px) { .verify { margin-left: 0; } }
+  .verify svg { flex: none; margin-top: 3px; }
+  .verify p { margin: 0; font-size: .97rem; line-height: 1.55; }
+  .verify b { font-weight: 600; }
+
+  /* ── Permission table ──────────────────────────────────────────────────── */
+  .table-wrap {
+    margin: 26px 0 0 calc(2.1rem + 20px);
+    max-width: 44rem;
+    overflow-x: auto;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    background: var(--paper);
+  }
+  @media (max-width: 620px) { .table-wrap { margin-left: 0; } }
+  table { width: 100%; border-collapse: collapse; font-size: .93rem; }
+  thead th {
+    text-align: left;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: .11em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 13px 18px;
+    background: var(--sunk);
+    border-bottom: 1px solid var(--rule);
+    white-space: nowrap;
+  }
+  tbody td { padding: 13px 18px; border-bottom: 1px solid var(--rule-soft); vertical-align: top; }
+  tbody tr:last-child td { border-bottom: 0; }
+  tbody td:first-child { font-weight: 500; white-space: nowrap; color: var(--ink); }
+  tbody td:last-child { color: var(--ink-soft); }
+
+  /* ── Contact ───────────────────────────────────────────────────────────── */
+  .contact {
+    margin-top: 72px;
+    padding: 34px 0 0;
+    border-top: 2px solid var(--ink);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 26px 60px;
+    align-items: flex-start;
+  }
+  .contact dl { margin: 0; }
+  .contact dt {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 10.5px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .contact dd { margin: 0; font-size: 1rem; }
+  a { color: var(--accent); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  a:hover { text-decoration-thickness: 2px; }
+
+  footer {
+    margin-top: 46px;
+    font-size: .86rem;
+    color: var(--faint);
+    max-width: var(--measure);
+    line-height: 1.6;
+  }
+</style>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand">
+      <svg width="34" height="34" viewBox="0 0 108 108" aria-hidden="true">
+        <rect width="108" height="108" rx="24" fill="#00614f"/>
+        <path fill="#f2fffb" fill-rule="evenodd" d="M38 30h32a6 6 0 0 1 6 6v22c0 12-9 21-22 26-13-5-22-14-22-26V36a6 6 0 0 1 6-6Zm4 6h24a4 4 0 0 1 4 4v17c0 9.5-7 16.5-16 20.5-9-4-16-11-16-20.5V40a4 4 0 0 1 4-4Z"/>
+        <g stroke="#f2fffb" stroke-width="2.4" stroke-linecap="round">
+          <path d="M54 44.5 43.5 56M54 44.5 64.5 56M43.5 56 54 68.5M64.5 56 54 68.5M54 44.5v24"/>
+          <path d="M43.5 56h21"/>
+        </g>
+        <g fill="#5adbc0">
+          <circle cx="54" cy="44.5" r="5.4"/><circle cx="43.5" cy="56" r="5.4"/>
+          <circle cx="64.5" cy="56" r="5.4"/><circle cx="54" cy="68.5" r="5.4"/>
+        </g>
+      </svg>
+      <div class="brand-name">Noventis<span>Cortex</span></div>
+    </div>
+    <div class="stamp">
+      <b>Version 1.0</b><br>
+      Effective 31 August 2026
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="title-block">
+    <p class="eyebrow">Privacy Policy</p>
+    <h1>What Cortex does with your information</h1>
+    <p class="standfirst">
+      Noventis Cortex is developed and published by <strong>Noventis Pvt&nbsp;Ltd</strong>. This
+      policy is short because there is very little to say: the app has no server, no account and
+      no telemetry, so most of what a privacy policy usually documents does not exist here.
+    </p>
+  </div>
+
+  <section>
+    <div class="sec-head"><div class="sec-num">01</div><h2>The short version</h2></div>
+    <div class="body">
+      <ul class="plain">
+        <li>Cortex does not collect your personal data.</li>
+        <li>Cortex does not send your data to us or to anyone else.</li>
+        <li>We operate no server that holds Cortex user data, because the app transmits none.</li>
+        <li>Everything Cortex knows about you is stored, encrypted, on your own device.</li>
+        <li>The app makes exactly one kind of network request: downloading a language model file
+            that you choose yourself. It carries no information about you.</li>
+      </ul>
+    </div>
+    <div class="verify">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M20 6 9 17l-5-5"/>
+      </svg>
+      <p><b>Every statement here is checkable.</b> Install Cortex, download a model, then turn on
+      airplane mode. Everything except Model Manager keeps working, because nothing except Model
+      Manager uses the network.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-num">02</div><h2>Information we collect</h2></div>
+    <div class="body">
+      <p class="lede">None.</p>
+      <p>We collect no personal information, no usage statistics, no analytics, no crash reports,
+      no device fingerprints and no advertising identifiers. Cortex contains no advertising and no
+      third-party tracking or attribution software.</p>
+      <p>There is no Noventis account, no sign-in, no profile and no server-side storage associated
+      with the app. We cannot identify you as a user of Cortex, because nothing about your use of
+      it ever reaches us.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-num">03</div><h2>Information the app processes on your device</h2></div>
+    <div class="body">
+      <p>Cortex works with a good deal of personal information — it simply never leaves the device
+      it is on. Depending on which features you use and which permissions you grant, the app may
+      read and store, locally:</p>
+      <ul class="plain">
+        <li>What you type or say to it, and the replies produced on the device</li>
+        <li>Documents you photograph, scan, import or share into the app, and the text extracted from them</li>
+        <li>Dates, amounts and reference numbers found in those documents</li>
+        <li>Reminders you create, or that the app creates from a document</li>
+        <li>Memory entries — contacts you mention, places, preferences, routines, conversation summaries</li>
+        <li>Contacts, calendar entries, files, photos and device settings that a skill you invoke reads</li>
+        <li>Audio captured while you are speaking to it, processed by Android's on-device speech recognition</li>
+      </ul>
+      <p>All of this is held in an encrypted database on your device. The encryption key is
+      generated on the device and kept in the Android Keystore, so the database is readable only on
+      that device. The app also disables Android's automatic cloud backup for its own data, so the
+      operating system does not copy the database off the device either.</p>
+      <p>We have no access to any of it, at any point, by any means.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-num">04</div><h2>Where the language model runs</h2></div>
+    <div class="body">
+      <p class="lede">On your phone.</p>
+      <p>Cortex loads a quantised language model file stored on the device and runs it on the
+      device's own processor. Your requests are interpreted, planned and answered locally. Nothing
+      you type or say is transmitted to Noventis, to a model provider, or to any third party in
+      order to be processed.</p>
+      <p>Cortex is software you run, not a service we operate on your behalf. We do not see your
+      requests and could not retrieve them if we were asked to.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-num">05</div><h2>The one time Cortex uses the internet</h2></div>
+    <div class="body">
+      <p>Cortex requests network access for a single purpose: downloading a model file when you
+      choose one in Model Manager and tap Download. Nothing else in the app makes a network
+      request.</p>
+      <p>That download is an ordinary HTTPS file fetch from the public host listed for that model,
+      performed by Android's system download manager. It includes no information about you, your
+      device's contents, or anything you have said to Cortex. As with any download from any host,
+      the server providing the file necessarily sees the network address it is sending the file to;
+      that is a property of how the internet works, not information the app supplies, and we
+      receive none of it.</p>
+      <p>Those model files are published by their respective authors under their own licences and
+      terms. We do not license them to you and make no representation about them.</p>
+      <p>You may skip the download entirely and supply your own model file. Once a model is
+      installed, Cortex is fully functional with the network switched off.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-num">06</div><h2>Sharing and disclosure</h2></div>
+    <div class="body">
+      <p class="lede">We share nothing, because we hold nothing.</p>
+      <p>We do not sell, rent, trade or disclose personal information to third parties. There is no
+      third party with access to your Cortex data. There is no dataset of Cortex users for a future
+      acquirer, court order or law-enforcement request to reach — a request of that kind would be
+      answered by saying that no such data exists.</p>
+      <p>Actions you ask Cortex to perform may hand information to other apps on your phone —
+      sending a message passes your text to your messaging app, opening a location passes it to
+      your maps app. Those apps are governed by their own privacy policies, and Cortex asks you to
+      confirm before any action that leaves the device in this way.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-num">07</div><h2>Permissions</h2></div>
+    <div class="body">
+      <p>Cortex requests a permission only when a feature you are using needs it, explains why at
+      the point of asking, and keeps working — with that one feature unavailable — if you decline.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">Permission</th><th scope="col">Used for</th></tr></thead>
+        <tbody>
+          <tr><td>Microphone</td><td>Speech input, via Android's on-device recognition</td></tr>
+          <tr><td>Camera</td><td>Photographing and scanning documents</td></tr>
+          <tr><td>Contacts</td><td>Resolving a name you mention to a phone number</td></tr>
+          <tr><td>Calendar</td><td>Reading and creating events you ask for</td></tr>
+          <tr><td>SMS</td><td>Sending a message you have asked for and confirmed</td></tr>
+          <tr><td>Phone</td><td>Placing a call you have asked for and confirmed</td></tr>
+          <tr><td>Notifications</td><td>Delivering your reminders</td></tr>
+          <tr><td>Exact alarms</td><td>Firing a reminder at the minute you set</td></tr>
+          <tr><td>Run at startup</td><td>Restoring your scheduled reminders after a reboot</td></tr>
+          <tr><td>Bluetooth, Wi-Fi</td><td>Reporting status and toggling them on request</td></tr>
+          <tr><td>Biometrics</td><td>Unlocking the app's encrypted storage locally</td></tr>
+          <tr><td>Internet</td><td>The model download described in section 05, and nothing else</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="body" style="margin-top:22px">
+      <p>You can review and revoke every one of these at any time, in the app's Permissions screen
+      or in Android's own settings.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-num">08</div><h2>Your data, and your control over it</h2></div>
+    <div class="body">
+      <p>Everything Cortex remembers about you is visible in the <strong>Memory</strong> screen,
+      where each entry can be inspected, pinned, edited or deleted individually. What Cortex is
+      permitted to learn is governed by switches in <strong>Settings</strong>.</p>
+      <p>Documents you capture or import are listed in the <strong>Documents</strong> screen and can
+      be deleted individually. Cortex records medical, identity and financial documents by category
+      only — noting that such a document exists, never storing its contents — regardless of your
+      other settings.</p>
+      <p>You may export your data at any time from within the app.</p>
+      <p><strong>Deleting everything.</strong> Clearing the app's storage in Android settings, or
+      uninstalling Cortex, destroys the encrypted database and the key material that reads it.
+      Neither is recoverable afterwards — by you, or by us. There is no separate deletion request to
+      make and no account for us to close, because we hold nothing to delete. If you would like
+      written confirmation of that, write to
+      <a href="mailto:support@noventis.ai">support@noventis.ai</a> and we will provide it.</p>
+      <p><strong>Device security is yours.</strong> Cortex encrypts its own storage, but a device
+      that other people can unlock is a device on which your assistant can be read.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-num">09</div><h2>Children</h2></div>
+    <div class="body">
+      <p>Cortex is not directed at children and is not intended for use by anyone under 18. We do
+      not knowingly collect information from children — or from anyone else, as section 02
+      explains.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-num">10</div><h2>Legal rights</h2></div>
+    <div class="body">
+      <p>Privacy laws including the GDPR, the CCPA and India's Digital Personal Data Protection Act
+      give you rights to access, correct, delete and port your personal data, and to object to its
+      processing.</p>
+      <p>Those rights are exercised against whoever holds and processes your data. For Cortex, that
+      is you: your data lives on your device, and the app gives you direct access, correction,
+      deletion and export for all of it, without asking anyone's permission. Noventis is not a data
+      controller or processor of your Cortex content, because we never receive it.</p>
+      <p>If you believe we hold data about you and would like to exercise a right over it, write to
+      <a href="mailto:support@noventis.ai">support@noventis.ai</a>.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-num">11</div><h2>Security</h2></div>
+    <div class="body">
+      <p>Cortex stores its data in a SQLCipher-encrypted database. The key is generated on your
+      device and held in the Android Keystore, backed by hardware-secured storage where the device
+      provides it. Automatic cloud backup of the app's data is disabled. The app maintains a
+      tamper-evident local audit log of the actions it takes on your behalf.</p>
+      <p>No security measure is absolute. A device that is unlocked, rooted or compromised is one
+      on which these protections can be defeated.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-num">12</div><h2>Changes to this policy</h2></div>
+    <div class="body">
+      <p>If we change this policy we will update the effective date above, publish the new version
+      at this address, and ship the updated text inside the app. Material changes will be described
+      in the release notes for the version that carries them.</p>
+      <p>Because Cortex holds no account and stores nothing about you outside your own device,
+      uninstalling the app ends the relationship completely. There is nothing left with us to
+      close.</p>
+    </div>
+  </section>
+
+  <div class="contact">
+    <dl>
+      <dt>Published by</dt>
+      <dd>Noventis Pvt Ltd</dd>
+    </dl>
+    <dl>
+      <dt>Contact</dt>
+      <dd><a href="mailto:support@noventis.ai">support@noventis.ai</a></dd>
+    </dl>
+    <dl>
+      <dt>Version</dt>
+      <dd>1.0 &middot; effective 31 August 2026</dd>
+    </dl>
+  </div>
+
+  <footer>
+    This policy applies to the Noventis Cortex Android application distributed through Google Play.
+  </footer>
+</main>
