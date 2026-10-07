@@ -292,8 +292,8 @@
       <div class="brand-name">Noventis<span>Cortex</span></div>
     </div>
     <div class="stamp">
-      <b>Version 1.1</b><br>
-      Effective 18 September 2026
+      <b>Version 1.2</b><br>
+      Effective 6 October 2026
     </div>
   </div>
 </header>
@@ -365,7 +365,7 @@
         <li>An activity log of the rules that have run: which rule, at what time, and whether it succeeded</li>
         <li>Memory entries — contacts you mention, places, preferences, routines, conversation summaries</li>
         <li>Contacts, calendar entries, files, photos and device settings that a skill you invoke reads</li>
-        <li>Audio captured while you are speaking to it, processed by Android's on-device speech recognition</li>
+        <li>Audio captured while you are speaking to it, processed by Android's on-device speech recognition. Cortex will not use any other recogniser unless you switch on &ldquo;Allow the phone's speech service&rdquo; in Settings &rsaquo; Voice. If you do, then on a phone with no on-device recogniser for your language, your audio goes to your phone's default speech service. That service is provided by your phone's maker or by Google, not by Noventis, and may process audio on its servers under its own privacy policy. The setting is off by default. If you make Cortex your phone's digital assistant, long-pressing Home or the power button opens Cortex listening. Cortex asks Android not to give it the contents of your screen or a screenshot when you do, and the speech service it offers other apps in that role uses only Android's on-device recogniser.</li>
       </ul>
       <p>All of this is held in an encrypted database on your device. The encryption key is
       generated on the device and kept in the Android Keystore, so the database is readable only on
@@ -402,9 +402,14 @@
       copy of your call history. If a rule matches, the same one-line entry is added to the activity
       log, naming the other party — the contact name if your contacts supply one, otherwise the
       number — and, for a rule that watches for completed calls, how long the call lasted.</p>
+      <p><strong>A Bluetooth device connecting.</strong> If you write a rule about a Bluetooth device
+      — your car, your earbuds — Android tells Cortex when a device connects or disconnects, with its
+      name. Cortex compares the name against your rule. If nothing matches, nothing is written down.
+      If a rule matches, the log line names the device. Cortex keeps no list of the devices it has
+      seen.</p>
       <p><strong>What persists.</strong> Two things, both on your device and both yours: the rules you
-      wrote, and the log of the runs they produced — including the sender, contact, amount and
-      duration details described above. Both are listed in the <strong>Automations</strong> screen
+      wrote, and the log of the runs they produced — including the sender, contact, amount, duration
+      and device-name details described above. Both are listed in the <strong>Automations</strong> screen
       and can be deleted there, individually or entirely. Nothing is written at all for a message or
       call that matches no rule.</p>
       <p><strong>None of it is transmitted.</strong> No message, no number, no call and no rule
@@ -579,7 +584,7 @@
     </dl>
     <dl>
       <dt>Version</dt>
-      <dd>1.1 &middot; effective 18 September 2026</dd>
+      <dd>1.2 &middot; effective 6 October 2026</dd>
     </dl>
   </div>
 
