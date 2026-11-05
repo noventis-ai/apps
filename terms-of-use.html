@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cortex — Terms of Use</title>
+<style>
+  /* System fonts only: the page must render offline, inside the app. */
+  :root {
+    color-scheme: light;
+    --bg: #F3F5F2;
+    --surface: #FFFFFF;
+    --ink: #1D2B36;
+    --muted: #5A6872;
+    --accent: #2F6F73;
+    --accent-soft: #DCEAE8;
+    --rule: #C9D2CE;
+    --fill-bg: #FFF1C9;
+    --fill-ink: #5B4300;
+    --serif: Charter, "Bitstream Charter", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", sans-serif;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #121A20;
+      --surface: #19242B;
+      --ink: #E4EAE7;
+      --muted: #9AA9B0;
+      --accent: #7FC2C0;
+      --accent-soft: #1F3638;
+      --rule: #2C3A42;
+      --fill-bg: #3D3214;
+      --fill-ink: #F3DC9B;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #121A20; --surface: #19242B; --ink: #E4EAE7; --muted: #9AA9B0;
+    --accent: #7FC2C0; --accent-soft: #1F3638; --rule: #2C3A42;
+    --fill-bg: #3D3214; --fill-ink: #F3DC9B;
+  }
+  *, *::before, *::after { box-sizing: inherit; }
+  html { scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 1rem); }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    -webkit-text-size-adjust: 100%;
+  }
+  .page {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 4rem;
+  }
+  header h1 {
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: clamp(2rem, 7vw, 2.75rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.75rem;
+  }
+  .meta {
+    font-family: var(--sans);
+    font-size: 0.875rem;
+    color: var(--muted);
+    margin: 0;
+  }
+  .meta + .meta { margin-top: 0.15rem; }
+
+  /* The one memorable element: the plain-language summary. */
+  .short {
+    margin: 2rem 0 2.5rem;
+    background: var(--surface);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 10px 10px 0;
+    padding: 1.25rem 1.25rem 1.25rem 1.5rem;
+  }
+  .short h2 {
+    font-family: var(--sans);
+    font-size: 1.125rem;
+    margin: 0 0 0.25rem;
+  }
+  .short > p { margin: 0 0 1rem; color: var(--muted); font-size: 0.9375rem; }
+  .short dl { margin: 0; }
+  .short dt {
+    font-family: var(--sans);
+    font-weight: 650;
+    font-size: 1rem;
+    margin-top: 0.9rem;
+  }
+  .short dt:first-child { margin-top: 0; }
+  .short dd { margin: 0.15rem 0 0; }
+
+  nav h2 {
+    font-family: var(--sans);
+    font-size: 0.9375rem;
+    color: var(--muted);
+    font-weight: 600;
+    margin: 0 0 0.5rem;
+  }
+  nav ol {
+    margin: 0 0 2.5rem;
+    padding-left: 1.5rem;
+    font-family: var(--sans);
+    font-size: 0.9375rem;
+    columns: 2 14rem;
+    column-gap: 2rem;
+  }
+  nav li { break-inside: avoid; padding: 0.15rem 0; }
+
+  a { color: var(--accent); text-underline-offset: 0.15em; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+  main { counter-reset: clause; }
+  section {
+    counter-increment: clause;
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    margin-top: 2rem;
+  }
+  section h2 {
+    font-family: var(--sans);
+    font-size: 1.3125rem;
+    line-height: 1.3;
+    margin: 0 0 0.75rem;
+    display: flex;
+    gap: 0.6rem;
+    align-items: baseline;
+  }
+  section h2::before {
+    content: counter(clause);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border-radius: 999px;
+    min-width: 1.75rem;
+    text-align: center;
+    padding: 0.1rem 0.45rem;
+    flex: none;
+  }
+  p, li { max-width: 68ch; }
+  ul { padding-left: 1.25rem; }
+  li + li { margin-top: 0.35rem; }
+  .callout {
+    background: var(--accent-soft);
+    border-radius: 8px;
+    padding: 0.9rem 1rem;
+    margin: 1rem 0;
+  }
+  .callout p { margin: 0; }
+  mark.fill {
+    background: var(--fill-bg);
+    color: var(--fill-ink);
+    font-family: var(--sans);
+    font-size: 0.9em;
+    padding: 0 0.25em;
+    border-radius: 3px;
+  }
+  .caps-off { font-variant: normal; }
+  footer {
+    margin-top: 3rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+    font-family: var(--sans);
+    font-size: 0.875rem;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <h1>Terms of Use</h1>
+  <p class="meta">Cortex for Android, version <mark class="fill">[x.y.z]</mark> and later</p>
+  <p class="meta">Effective 5 November 2026</p>
+</header>
+
+<aside class="short" aria-labelledby="short-title">
+  <h2 id="short-title">The short version</h2>
+  <p>This summary is here to help you. The full terms below are what apply.</p>
+  <dl>
+    <dt>Cortex thinks on your phone</dt>
+    <dd>Its AI model runs on your device. Your requests, notes and reminders are processed locally and are not sent to us.</dd>
+    <dt>You make every call and send every text</dt>
+    <dd>Cortex never places a phone call or sends an SMS by itself. It opens your phone or messaging app with the number or draft filled in, and you decide whether to press Call or Send.</dd>
+    <dt>The AI can be wrong</dt>
+    <dd>Check drafts, times and details before you act on them. Cortex asks you to confirm before it saves things like calendar events.</dd>
+    <dt>Don’t rely on it for emergencies</dt>
+    <dd>Reminders and automations are best effort. For emergencies, call your local emergency number directly.</dd>
+  </dl>
+</aside>
+
+<nav aria-labelledby="toc-title">
+  <h2 id="toc-title">Contents</h2>
+  <ol>
+    <li><a href="#agreement">Agreeing to these terms</a></li>
+    <li><a href="#what">What Cortex does</a></li>
+    <li><a href="#ai">On-device AI and accuracy</a></li>
+    <li><a href="#handoff">Calls, messages and actions you complete</a></li>
+    <li><a href="#automations">Automations and reminders</a></li>
+    <li><a href="#emergencies">Not an emergency service</a></li>
+    <li><a href="#permissions">Permissions</a></li>
+    <li><a href="#data">Your data</a></li>
+    <li><a href="#third-party">Other apps and services</a></li>
+    <li><a href="#models">AI model files</a></li>
+    <li><a href="#use">Acceptable use</a></li>
+    <li><a href="#ip">Ownership</a></li>
+    <li><a href="#warranty">No warranty</a></li>
+    <li><a href="#liability">Limitation of liability</a></li>
+    <li><a href="#changes">Updates and changes</a></li>
+    <li><a href="#ending">Stopping use</a></li>
+    <li><a href="#law">Governing law</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</nav>
+
+<main>
+
+<section id="agreement">
+  <h2>Agreeing to these terms</h2>
+  <p>These terms are an agreement between you and <mark class="fill">[Developer or company name]</mark> (“we”, “us”) about your use of the Cortex app (“Cortex” or “the app”). By installing or using Cortex, you agree to these terms and to our <a href="privacy-policy.html">Privacy Policy</a>. If you don’t agree, don’t use the app.</p>
+  <p>You must be old enough to agree to these terms where you live, or have a parent or guardian agree for you.</p>
+</section>
+
+<section id="what">
+  <h2>What Cortex does</h2>
+  <p>Cortex is a personal assistant that runs a small language model on your phone. It can understand requests in chat or by voice, draft text, plan multi-step tasks and use built-in skills, such as setting alarms, opening the camera, controlling music, managing notifications and adding calendar events. It can also run automations and reminders you set up.</p>
+  <p>Features depend on your device, your Android version, the permissions you grant and whether a model has been downloaded. Some features may not be available on every phone.</p>
+</section>
+
+<section id="ai">
+  <h2>On-device AI and accuracy</h2>
+  <p>Cortex’s answers, drafts, plans and interpretations are generated by an AI model and may be incomplete, out of date or wrong. A request like “meeting tomorrow at 5” could be read as the wrong day or time. The model has no internet access and may not know about recent events.</p>
+  <ul>
+    <li>Review anything Cortex prepares before you use, send or rely on it.</li>
+    <li>Don’t use Cortex’s output as professional medical, legal, financial or safety advice.</li>
+    <li>You are responsible for the actions you choose to take based on what Cortex suggests.</li>
+  </ul>
+  <p>On slower phones the model can take a while to respond. If it stops responding, Cortex will stop waiting, tell you, and keep working.</p>
+</section>
+
+<section id="handoff">
+  <h2>Calls, messages and actions you complete</h2>
+  <div class="callout">
+    <p>Cortex is designed never to place a phone call or send an SMS on its own, whether you ask in chat, by voice or through an automation.</p>
+  </div>
+  <p>When you ask Cortex to call someone or send a text, it opens your phone’s dialer or messaging app with the number or message filled in. Nothing is dialled or sent until you press Call or Send yourself. Automations and reminders cannot call or text anyone.</p>
+  <p>Other actions that change something on your phone, such as saving a calendar event, are shown to you for confirmation first. Once you hand off to another app, what happens next is controlled by that app and its terms.</p>
+</section>
+
+<section id="automations">
+  <h2>Automations and reminders</h2>
+  <p>Automations run only the actions listed in the app. If one automation fails, Cortex shows a message and your other automations keep running.</p>
+  <p>Android may delay or stop background work, for example to save battery, after a restart, when the clock or time zone changes, or if you restrict the app. Because of this, we can’t promise that a reminder or automation will run at the exact time, or at all. Don’t rely on Cortex alone for anything where a missed or late reminder could cause harm, such as medication, travel or safety-critical tasks.</p>
+</section>
+
+<section id="emergencies">
+  <h2>Not an emergency service</h2>
+  <p>Cortex is not designed for emergencies and cannot contact emergency services for you. If you or someone else is in danger, call your local emergency number directly using your phone.</p>
+</section>
+
+<section id="permissions">
+  <h2>Permissions</h2>
+  <p>Cortex asks for permissions only when a feature needs them, such as the microphone for voice, calendar access for events, or notification access for reminders. Every permission is optional. You can grant or remove them at any time in the app or in your phone’s settings; the features that rely on them will then stop working until you allow them again.</p>
+</section>
+
+<section id="data">
+  <h2>Your data</h2>
+  <p>Your conversations, notes, automations and reminders are stored on your device. Calendar events created by Cortex are saved to a calendar named “Cortex” that exists only on your phone and is not synced to any online account.</p>
+  <p>If the app can’t open its storage, it keeps working temporarily in memory and shows a warning. Anything created while that warning is shown may be lost when the app closes.</p>
+  <p>Data on your phone can be lost if you uninstall the app, clear its data, reset or lose your device. You are responsible for keeping your own backups. Our <a href="privacy-policy.html">Privacy Policy</a> explains in more detail how data is handled.</p>
+</section>
+
+<section id="third-party">
+  <h2>Other apps and services</h2>
+  <p>Cortex works with other apps on your phone, such as your dialer, messaging, clock, camera, music and calendar apps. Those apps are provided by others and their own terms apply.</p>
+  <p>Speech recognition and text-to-speech use engines installed on your phone. If you turn on “Use phone’s service” for speech recognition, your voice may be processed by that service’s provider, possibly online, under their terms and privacy policy. We don’t control those services.</p>
+</section>
+
+<section id="models">
+  <h2>AI model files</h2>
+  <p>To work offline, Cortex needs an AI model file on your device. Model files are large and may be provided by third parties under their own licences, which you agree to follow when you download or use them. Downloads use your storage and may use mobile data, which your carrier may charge for.</p>
+</section>
+
+<section id="use">
+  <h2>Acceptable use</h2>
+  <p>Use Cortex only for lawful purposes. Don’t use it to:</p>
+  <ul>
+    <li>harass, threaten, deceive or impersonate others, or send unwanted messages;</li>
+    <li>create content that is illegal or that infringes others’ rights;</li>
+    <li>interfere with other people’s devices, accounts or data without permission;</li>
+    <li>remove or work around the app’s safety protections, including the requirement that you complete calls and messages yourself.</li>
+  </ul>
+</section>
+
+<section id="ip">
+  <h2>Ownership</h2>
+  <p>We grant you a personal, non-exclusive, non-transferable licence to use Cortex on devices you own or control, under these terms. The app, its design and its code belong to us or our licensors, except for open-source components, which are covered by their own licences. Content you write and the outputs created for you are yours to use, subject to the rights of others and any model licence.</p>
+</section>
+
+<section id="warranty">
+  <h2>No warranty</h2>
+  <p>Cortex is provided “as is” and “as available”. To the extent the law allows, we make no promises that the app will be error-free, uninterrupted, accurate or suitable for a particular purpose, or that its AI output will be correct. Some places don’t allow these exclusions, so some of them may not apply to you.</p>
+</section>
+
+<section id="liability">
+  <h2>Limitation of liability</h2>
+  <p>To the extent the law allows, we are not liable for indirect, incidental or consequential losses, or for loss of data, missed reminders, or actions you took based on the app’s output. Where we are liable, our total liability is limited to the amount you paid for the app in the twelve months before the claim, or <mark class="fill">[amount and currency]</mark> if you paid nothing. Nothing in these terms limits liability that cannot be limited by law, or your rights as a consumer.</p>
+</section>
+
+<section id="changes">
+  <h2>Updates and changes</h2>
+  <p>We may update Cortex to fix problems, improve features or meet legal requirements, and may change or remove features. We may also update these terms. If a change is significant, we’ll tell you in the app before it takes effect. Continuing to use Cortex after that means you accept the updated terms.</p>
+</section>
+
+<section id="ending">
+  <h2>Stopping use</h2>
+  <p>You can stop using Cortex at any time by uninstalling it. We may end your licence if you seriously break these terms. Sections about ownership, no warranty, limitation of liability and governing law continue to apply after that.</p>
+</section>
+
+<section id="law">
+  <h2>Governing law</h2>
+  <p>These terms are governed by the laws of <mark class="fill">[country or state]</mark>. Disputes will be handled by the courts of <mark class="fill">[location]</mark>, unless the law where you live gives you the right to bring a claim locally.</p>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Questions about these terms can be sent to <mark class="fill">[support email address]</mark>.</p>
+</section>
+
+</main>
+
+<footer>
+  <p>Cortex Terms of Use, effective 5 November 2026.</p>
+</footer>
+
+</div>
+</body>
+</html>
